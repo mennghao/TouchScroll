@@ -1,3 +1,8 @@
+/**
+ * [description]
+ * @param  {[type]} window [description]
+ * @return {[type]}        [description]
+ */
 (function (window) {
     "use strict";
     
@@ -85,14 +90,16 @@
                 moveX;
             
             That.opts.Num += 1;
-            moveX = That.opts.Num * That.opts.Width;
             
             _setFocusIcon(That.opts.TouchIco, That.opts.Num);
             
             //当到达最后一张图时重新开始
-            if (That.opts.Num == (That.len - 1)) {
+            if (That.opts.Num == That.len) {
                 That.opts.Num = 0;
             }
+
+            moveX = That.opts.Num * That.opts.Width;
+
             
             _setPosition(That.opts.Touch, -moveX);
             
